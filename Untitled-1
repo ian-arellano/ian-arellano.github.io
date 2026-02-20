@@ -1,0 +1,21 @@
+
+        body {
+            background color: #E7E7E7
+            font-size: 1em;
+            font-weight: normal
+            font-family: arial, sans-serif
+            color: #000000; /* black */
+            text-align: left
+            }
+        h1{
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #0000ff; /* blue */
+            text-align: center;
+        }
+        h2{
+            font-size: 1.8em;
+            font-weight: bold;
+            color: rgba(76, 68, 79, 0.68); /* gray */
+            text-align: center;
+        }
