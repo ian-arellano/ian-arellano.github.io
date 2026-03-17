@@ -50,7 +50,28 @@
      myClock.innerHTML = currentTime;
     
         }
-    </script>    
+    
+    function toggleClock() {
+        //get the clock
+        var myClock = document.getElementByld('clock');
+        
+        //get the current value of the clock's display property
+        var displaySetting = myClock.style.display;
+        
+        //also get the clock button, so we can change what it says
+        var clockButton = document.getElementByld('clockButton')
+        
+        //now toggle the clock and the button text, depending on current state
+        if (displaySetting =='block'){
+        //clock is visible. hide it
+        myClock.style.display = 'none'
+        //change button text
+        clockButton.innerHTML = 'Hide Clock'
+         }
+        }
+        
+        </script>    
+    
     
     <style>
         button {
@@ -69,6 +90,9 @@
           /*your style declarations go here */
         background-color: lightgray
         }
+        
+        display: block;
+        <button onclick="toggleClock()" id="clockButton">Show clock</button> 
         
         </style>  
         
