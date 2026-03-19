@@ -8,6 +8,78 @@
     
     <title>Web Portfolio: Ian Arellano Video Page</title>
          <link type="text/css" rel="stylesheet" href="styles/mystyle.css" media="screen">  
+    
+    <style></style>    
+    
+    <script>
+        // create a few global variables to be used later
+        var video, speed, volume;
+        
+        function init(){
+        //initialize the player
+        //first, get the media element and assign it to the video variable
+        video= 
+        document.getElementById('myvideo');
+        
+        //get the current playbackRate from the HTML5 media API
+        //range is 0 to very fast, with 1 being normal playback
+        speed = video.playbackRate;
+        
+        //volume range is 0 to 1
+        //set it in the middle so we have room to move it with our buttons
+        volume = 0.5
+        video.volume = volume;
+        }
+        
+        function play(){
+         video.play();
+        }
+        
+        function pause(){
+         video.pause();
+        }
+        
+        function changeSpeed(direcytion){
+        //direction is either 'up' (faster) or 'down' (slower) 
+        if (direction == 'up'){
+        if (speed < 10){
+        //increase playbackRate
+        speed = speed + 0.1;
+         }
+        }
+        else if (direction =='down'){
+        if (speed > 0){
+        //decreased playbackRate
+        speed = speed - 0.1;
+         }
+        }
+        
+        //so far all we've done is change the value of our speed variable
+         //now let's assign it to the player
+         video.playbackRate = speed;
+        }
+        
+        function changeVolume(direction){
+         if (direction == 'up'){
+        //if not fully cranked yet, increase volume
+        if (volume < 0.9){
+            volume = volume + 0.1;
+         }
+        }
+        else if (direction == 'down'){
+         //if not muted, decrease volume
+         if (volume > 0.1){
+            volume = volume - 0.1;
+         }
+        }
+        //so far all we've done is change the value of our volume variable
+        //now let's assign it to the player
+         video.volume = volume;
+        }
+        
+        //wait until the web page had finished loading, then run the init function
+        window.onload = init</script>    
+        
     </head>
 
     <body>
@@ -33,7 +105,16 @@
        <br />
             <br /><p>Designing and Planning Web Pages</p>
         <p>Pitching Coachs Throws 107mph</p>
-        <video controls poster="images/video1poster.png" preload="auto"><source src="videos/unit1.webm" type="video/webm"><track src="captions/unit1.vtt" kind="captions" srclang="en" default></video>
+        <video id="myvideo" poster="images/video1poster.png" preload="auto"><source src="videos/unit1.webm" type="video/webm"><track src="captions/unit1.vtt" kind="captions" srclang="en" default></video>
+            
+        <div id="myplayer">
+            <button onclick="play()">Play</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="changeSpeed('up')">Faster</button>
+            <button onclick="changeSpeed('down')">Slower</button>
+            <button onclick="changeVolume('up')">Louder</button>
+            <button onclick="changeVolume('down')">Softer</button>
+        </div>    
         
     <div>
         <video controls pister="images/video2poster.png" preload="auto"><source src="videos/pitching.mp4" type="video/mp4"><track src="captions/pitching.vtt" kind="captions" srclang="en" default></video>
