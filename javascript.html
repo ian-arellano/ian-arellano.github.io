@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 
 <html lang=en>
-
     <head>
-    
     <meta charset="utf-8">
-    
     <title>Web Portfolio: Ian Arellano Javascript Page</title>
-        <link type="text/css" rel="stylesheet" href="styles/mystyle.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="styles/mystyle.css" media="screen">
     
-    <script>
-        alert ('Javascript Is Working'); function showAlert(){alert ("Que Onda Guey!"); }
+    <style>
+        button {
+                font-size: 1.1em;
+                background-color: #EBF5FF;
+                color: #4312AE;
+                border: 2px solid black;
+                box-shadow: 4px 4px 4px #999999;
+                } 
+        button:hover, button:focus, button:active { /* swap colors */
+                color: #EBF5FF;
+                background-color: #4312AE;
+                    cursor: pointer;/* displays a hand */} 
+        
+        div#clock { /*your style declarations go here */
+        background-color: lightgray;
+        display: block;
+        }
+        </style>  
+        <script>
+        alert ('Javascript Is Working'); function showAlert(){alert ("Que Onda Guey!");}
         
         function updateTime(){
         
@@ -53,49 +68,30 @@
     
     function toggleClock() {
         //get the clock
-        var myClock = document.getElementByld('clock');
+        var myClock = document.getElementById('clock');
         
         //get the current value of the clock's display property
         var displaySetting = myClock.style.display;
         
         //also get the clock button, so we can change what it says
-        var clockButton = document.getElementByld('clockButton')
+        var clockButton = document.getElementById('clockButton')
         
         //now toggle the clock and the button text, depending on current state
         if (displaySetting =='block'){
         //clock is visible. hide it
         myClock.style.display = 'none'
         //change button text
-        clockButton.innerHTML = 'Hide Clock'
+        clockButton.innerHTML = 'Show Clock'
+         }
+        else{
+        //clock is hidden. show it
+        myClock.style.display = 'block';
+        //change button text
+        clockButton.innerHTML = 'Hide Clock';
          }
         }
-        
         </script>    
     
-    
-
-    <style>
-        button {
-                font-size: 1.1em;
-                backbackground-color: #EBF5FF;
-                color: #4312AE;
-                border: 2px solid black;
-                box-shadow: 4px 4px 4px #999999;
-                } 
-        button:hover, button:focus, button:active { /* swap colors */
-                color: aliceblue#EBF5FF
-                background-color: 4312AE
-                    cursor: pointer,/* displays a hand */} 
-        
-        div#clock {
-          /*your style declarations go here */
-        background-color: lightgray
-        }
-        
-        display: block;
-        <button onclick="toggleClock()" id="clockButton">Show clock</button> 
-        
-        </style>  
         
     </head>
 
@@ -122,11 +118,12 @@
  <br > 
 <main id="main"><p>Update coming soon...</p>
         </main>
-
+ 
 <button onclick="showAlert()">Show Alert</button>
-
-<div id="clock"></div>
-        
+        <br>
+    <button onclick="toggleClock()" id="clockButton">Show clock</button>  
+<div id="clock"> </div>
+  
 
         
 </body>
