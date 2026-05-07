@@ -1,0 +1,56 @@
+.title {
+    color: #000000;
+text-align: center;
+
+}
+nav ul {
+            list-style-type: none;
+            }
+            
+            nav ul li {
+            float: left;
+            
+            margin-right: 0.5em;
+            }
+
+            nav ul li a {
+            padding: 0.25em 1em;
+            text-decoration: none; /* no underline */
+            background-color: white; /* pale bluish white */
+            color: black; /* dark blue */
+            border-top-left-radius: 1em 1em; /* rounded corner! */
+            border-top-right-radius: 1em 1em; /* another rounded corner */         	
+            text-align: center
+}          
+
+            nav ul li a:hover, nav ul li a:focus {
+            color: black;
+            background-color: white;
+            font-weight: bold;
+            text-align: center
+}
+
+.sale {
+    color: red;}
+
+nav {
+          text-align: center;
+}
+
+h1 {text-align: center;
+}
+
+#maindiv {text-align: center;
+}
+
+h3 {text-align: center;
+}
+
+ ul li{ text-align: center;
+}
+
+#contact {text-align: center;
+}
+
+#info {text-align: center;
+}
